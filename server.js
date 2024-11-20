@@ -28,13 +28,6 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-// // Post schema
-// const postSchema = new mongoose.Schema({
-//   course: { type: String, required: true },
-//   description: { type: String, required: true },
-// });
-
-// const Post = mongoose.model("Post", postSchema);
 
 // Movie schema
 const movieSchema = new mongoose.Schema({
@@ -45,74 +38,6 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model("Movie", movieSchema);
 
-// Post routes
-// app.post("/api/posts", async (req, res) => {
-//   const newPost = new Post({
-//     course: req.body.course,
-//     description: req.body.description,
-//   });
-
-//   try {
-//     const savedPost = await newPost.save();
-//     res.status(200).json(savedPost);
-//   } catch (error) {
-//     res.status(400).json({ message: "Error creating new post", error });
-//   }
-// });
-
-// app.get("/api/posts", async (req, res) => {
-//   try {
-//     const limit = Number(req.query.limit);
-//     const posts = limit ? await Post.find().limit(limit) : await Post.find();
-//     res.status(200).json(posts);
-//   } catch (error) {
-//     res.status(500).json({ message: "Error fetching posts", error });
-//   }
-// });
-
-// app.get("/api/posts/:id", async (req, res) => {
-//   try {
-//     const post = await Post.findById(req.params.id);
-
-//     if (post) {
-//       res.status(200).json(post);
-//     } else {
-//       res.status(404).json({ message: `Post with ID ${req.params.id} not found` });
-//     }
-//   } catch (error) {
-//     res.status(500).json({ message: "Error fetching post", error });
-//   }
-// });
-
-// app.put("/api/posts/:id", async (req, res) => {
-//   try {
-//     const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {
-//       new: true,
-//     });
-
-//     if (updatedPost) {
-//       res.status(200).json(updatedPost);
-//     } else {
-//       res.status(404).json({ message: `Post with ID ${req.params.id} not found` });
-//     }
-//   } catch (error) {
-//     res.status(500).json({ message: "Error updating post", error });
-//   }
-// });
-
-// app.delete("/api/posts/:id", async (req, res) => {
-//   try {
-//     const deletedPost = await Post.findByIdAndDelete(req.params.id);
-
-//     if (deletedPost) {
-//       res.status(200).json({ message: `Post with ID ${req.params.id} deleted successfully` });
-//     } else {
-//       res.status(404).json({ message: `Post with ID ${req.params.id} not found` });
-//     }
-//   } catch (error) {
-//     res.status(500).json({ message: "Error deleting post", error });
-//   }
-// });
 
 // Movie routes
 app.post("/api/movies", async (req, res) => {
